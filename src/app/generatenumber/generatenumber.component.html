@@ -1,0 +1,38 @@
+<div class="container d-flex flex-column gap-2">
+  <div class="form-group">
+    <label> Min Number </label>
+    <input
+      type="number"
+      class="form-control form-control-sm"
+      placeholder="Min No"
+      [(ngModel)]="minNumber"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Max Number</label>
+    <input
+      type="number"
+      class="form-control form-control-sm"
+      placeholder="MAx No"
+      [(ngModel)]="maxNumber"
+    />
+  </div>
+  <div class="form-group">
+    <label> How many random number? </label>
+    <input
+      type="number"
+      class="form-control form-control-sm"
+      placeholder="Enter number"
+      [(ngModel)]="numberOfRandomNumbers"
+    />
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary btn-sm"
+    (click)="eventchildClick()"
+  >
+    Generate
+  </button>
+</div>

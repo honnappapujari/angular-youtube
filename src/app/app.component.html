@@ -1,0 +1,35 @@
+<h4
+  class="text-center card border-0 my-2 p-2 d-flex align-center"
+  changeBg
+  appHover
+>
+  Generate Number
+</h4>
+
+<app-generatenumber
+  (customgenerateevent)="generateNumber($event)"
+  [minNumber]="minNumber"
+  [maxNumber]="maxNumber"
+></app-generatenumber>
+
+<app-search (SearchEmitter)="searchInputParentFunction($event)"></app-search>
+
+<hr />
+<ng-container *ngFor="let number of randomNumbers">
+  <ng-container
+    *ngIf="
+      searchoutPut === null ||
+      number.toString().includes(searchoutPut.toString())
+    "
+  >
+    <app-numbercard [childValue]="number"></app-numbercard>
+  </ng-container>
+</ng-container>
+
+<app-reference></app-reference>
+<div class="container">
+  <div class="row">
+    <app-react class="col-sm-6"></app-react>
+    <app-javascript class="col-sm-6"></app-javascript>
+  </div>
+</div>
